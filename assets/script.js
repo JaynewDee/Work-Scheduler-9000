@@ -9,7 +9,6 @@ renderColor();
 
 function storageInit() {
      var storedToDos = JSON.parse(localStorage.getItem("toDo"));
-     console.log(Object.values(storedToDos))
 
      for (var j = 0; j < storedToDos.length; j++) {
           $(formArea[j]).text(storedToDos[j])
