@@ -3,16 +3,21 @@ var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
 var saveBtnEl = $(".saveBtn");
 var formEl = $('.container');
 var formArea = document.querySelectorAll('#box');
-var storedToDos = [""]
-storageInit();
-renderColor();
+var storedToDos = ["0","1","2","3","4","5","6","7","8","9"]
+var toDo = ["", "", "", "", "", "", "", "", "", ""];
+
+console.log(storedToDos.length)
 
 function storageInit() {
      var storedToDos = JSON.parse(localStorage.getItem("toDo"));
+     if (storedToDos == null) {
+          return
+     }
 
      for (var j = 0; j < storedToDos.length; j++) {
           $(formArea[j]).text(storedToDos[j])
      }
+     
      
 }
 
@@ -46,3 +51,5 @@ function saveItem(event) {
 
 saveBtnEl.on("click", saveItem);
 setInterval(displayTime, 1000);
+storageInit();
+renderColor();
