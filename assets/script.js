@@ -3,7 +3,7 @@ var rightNow = moment().format('MMMM Do YYYY, h:mm:ss a');
 var saveBtnEl = $(".saveBtn");
 var formEl = $('.container');
 var formArea = document.querySelectorAll('#box');
-
+var storedToDos = [""]
 storageInit();
 renderColor();
 
